@@ -82,6 +82,7 @@ h6 {
 body {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
+  color: #03283C;
   position: relative;
 }
 
@@ -356,6 +357,55 @@ a:active {
           flex: 1 0 auto;
 }
 
+.dsostat {
+  padding: 50px 0;
+}
+
+.dsostat__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+}
+
+.dsostat__item {
+  text-align: center;
+  position: relative;
+}
+
+.dsostat__item:not(:last-of-type)::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -50px;
+  height: 80%;
+  width: 2px;
+  background-color: #000000;
+}
+
+.dsostat__title {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 122.2222222222%;
+  text-transform: capitalize;
+}
+
+.dsostat__text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120.8333333333%;
+}
+
 @media (min-width: 1600px) {
   .linksheader__link span {
     padding: 1px;
@@ -504,6 +554,23 @@ a:active {
             transform: rotate(45deg);
     bottom: calc(50% - 1px);
   }
+
+  .dsostat__items {
+    gap: 60px;
+  }
+
+  .dsostat__item:not(:last-of-type)::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    -webkit-transform: translate(50%, 10px);
+        -ms-transform: translate(50%, 10px);
+            transform: translate(50%, 10px);
+    right: 50%;
+    height: 2px;
+    width: 80%;
+    background-color: #000000;
+  }
 }
 
 @media (max-width: 1299.98px) and (max-width: 479.98px) {
@@ -548,6 +615,14 @@ a:active {
 
   .hero__buttons {
     padding: 0 10%;
+  }
+
+  .dsostat__items {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
   }
 }
 
@@ -603,5 +678,17 @@ a:active {
 
   .hero__btn {
     width: 100%;
+  }
+
+  .dsostat {
+    padding: 20px 0;
+  }
+
+  .dsostat__title {
+    font-size: 29px;
+  }
+
+  .dsostat__text {
+    font-size: 22px;
   }
 }
