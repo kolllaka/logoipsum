@@ -1,0 +1,81 @@
+// Container
+.container {
+	max-width: ($containerWidth+$containerPadding)+px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 $containerSidePadding+px;
+
+	@media (max-width:$breakpoint1300) {
+		max-width: 1200px;
+	}
+
+	@media (max-width:$breakpoint992) {
+		max-width: 970px;
+	}
+
+	@media (max-width:$breakpoint768) {
+		max-width: 750px;
+	}
+
+	@media (max-width:$breakpoint480) {
+		max-width: none;
+	}
+}
+
+.logo {
+}
+.btn {
+	padding: 15px 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-weight: 700;
+	font-size: 18px;
+	line-height: calc(22 / 18 * 100%);
+	text-transform: uppercase;
+	// .btn__secondary
+	&__secondary {
+		color: $primary;
+		background-color: $white;
+	}
+	// .btn__main
+	&__main {
+		color: $white;
+		background-color: $primary;
+	}
+}
+
+// Body
+body {
+	font-family: $fontMain;
+	font-style: normal;
+	&.locked{
+		overflow: hidden;
+	}
+}
+
+// Animations
+// Fade
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+// Images
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}

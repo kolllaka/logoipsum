@@ -1,0 +1,69 @@
+nav {
+	background-color: rgb(167, 79, 79);
+	overflow: hidden;
+}
+.navbar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.logo {
+	a {
+		color: white;
+	}
+}
+.menu {
+	display: flex;
+
+	// .menu__item
+	&__item {
+		margin-left: 25px;
+	}
+
+	// .menu__link
+	&__link {
+		color: white;
+	}
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+// Burger menu styles
+@media screen and (max-width: $burgerBreakpoint) {
+	// .menu
+	.menu {
+		position: fixed;
+		background: #131418;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		width: 100vw;
+		display: none;
+
+		&.active {
+			display: flex;
+			left: 0;
+			top: 0;
+			height: 100vh;
+			width: 100vw;
+			flex-direction: column;
+			pointer-events: all;
+			justify-content: center;
+			align-items: center;
+			z-index: 22;
+			animation: fade 0.1s linear;
+		}
+	}
+
+	// .burger
+	.burger {
+		display: none;
+		cursor: pointer;
+	}
+	
+}
