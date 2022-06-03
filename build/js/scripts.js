@@ -8,21 +8,21 @@ function burgerMenuFunc() {
 	const burgerMenu = burger.querySelector('.burger__menu'),
 		burgerBtn = burger.querySelector('.burger__btn');
 
-		burgerBtn.addEventListener('click', () => {
-			if (!burgerMenu.classList.contains('active')) {
-				burgerMenu.classList.add('active')
-				burgerBtn.classList.add('active-burger')
-				body.classList.add('locked')
-			} else {
-				burgerMenu.classList.remove('active')
-				burgerBtn.classList.remove('active-burger')
-				body.classList.remove('locked')
-			}
-		})
+	burgerBtn.addEventListener('click', () => {
+		if (!burgerMenu.classList.contains('active')) {
+			burgerMenu.classList.add('active')
+			burgerBtn.classList.add('active-burger')
+			body.classList.add('locked')
+		} else {
+			burgerMenu.classList.remove('active')
+			burgerBtn.classList.remove('active-burger')
+			body.classList.remove('locked')
+		}
+	})
 
 	// navbar breakpoints
 	window.addEventListener('resize', () => {
-		if (window.innerWidth > 991.98) {
+		if (window.innerWidth > 1299.98) {
 			burgerMenu.classList.remove('active')
 			burgerBtn.classList.remove('active-burger')
 			body.classList.remove('locked')

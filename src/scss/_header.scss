@@ -9,6 +9,9 @@
 		@media (max-width:$breakpoint1300) {
 			gap: 20px;
 		}
+		@media (max-width:$breakpoint768) {
+			flex-wrap: wrap;
+		}
 	}
 	// .header__menu
 	&__menu {
@@ -51,10 +54,14 @@
 	}
 	// .header__buttons
 	&__buttons {
+		z-index: 2;
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 		gap: 15px;
+		@media (max-width:$breakpoint768) {
+			width: 100%;
+		}
 		@media (max-width:$breakpoint480) {
 			flex-direction: column;
 			width: 100%;
