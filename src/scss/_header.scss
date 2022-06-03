@@ -1,5 +1,6 @@
 .header {
 	padding: 22px 0;
+	height: 104px;
 	// .header__navbar
 	&__navbar {
 		display: flex;
@@ -66,10 +67,12 @@
 		@media (max-width:$breakpoint480) {
 			flex-direction: column;
 			width: 100%;
+			display: none;
 		}
 	}
 	// .header__btn
 	&__btn {
+		padding: 15px 30px;
 		@media (max-width:$breakpoint480) {
 			width: 100%;
 		}
@@ -91,6 +94,10 @@
 			line-height: calc(20 / 16 * 100%);
 			text-transform: uppercase;
 			color: $header;
+			@media (min-width: 1600px) {
+				padding: 1px;
+				background-color: rgba($color: $white, $alpha: .2);
+			}
 			@media (max-width:$burgerBreakpoint) {
 				font-size: 20px;
 			}
@@ -163,6 +170,9 @@
 				animation: fade 0.1s linear;
 				@media (max-width:$breakpoint480) {
 					padding: 10px;
+				}
+				&~.header__buttons{
+					display: block;
 				}
 			}
 		}

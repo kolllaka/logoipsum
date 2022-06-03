@@ -79,8 +79,36 @@ h6 {
   padding: 0 20px;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  position: relative;
+}
+
+body.locked {
+  overflow: hidden;
+}
+
+.bg {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+.bg img {
+  margin-left: 43.75%;
+  width: 56.25%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+
 .btn {
-  padding: 15px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,25 +122,16 @@ h6 {
   font-size: 18px;
   line-height: 122.2222222222%;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .btn__secondary {
   color: #03283C;
-  background-color: #FFFFFF;
 }
 
 .btn__main {
   color: #FFFFFF;
   background-color: #03283C;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-}
-
-body.locked {
-  overflow: hidden;
 }
 
 @-webkit-keyframes fade {
@@ -149,8 +168,23 @@ body.locked {
      object-fit: cover;
 }
 
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 122.9166666667%;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:active {
+  opacity: 0.5;
+}
+
 .header {
   padding: 22px 0;
+  height: 104px;
 }
 
 .header__navbar {
@@ -216,6 +250,10 @@ body.locked {
   gap: 15px;
 }
 
+.header__btn {
+  padding: 15px 30px;
+}
+
 .linksheader__item {
   padding: 20px 15px;
 }
@@ -255,9 +293,84 @@ body.locked {
   display: none;
 }
 
+.hero {
+  min-height: 100vh;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.hero__content {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-bottom: 104px;
+}
+
+.hero__body {
+  max-width: 442px;
+}
+
+.hero__subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 189.4736842105%;
+  color: #08699E;
+  opacity: 0.85;
+}
+
+.hero__title {
+  margin-bottom: 25px;
+  color: #FF6200;
+  line-height: 130%;
+}
+
+.hero__title span {
+  display: block;
+  font-weight: 600;
+  color: #03283C;
+}
+
+.hero__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hero__btn {
+  padding: 15px 20px;
+}
+
+.hero__btn.btn__main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .linksheader__link span {
+    padding: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
 @media (max-width: 1299.98px) {
   .container {
     max-width: 1200px;
+  }
+
+  .bg img {
+    margin-left: 57.6388888889%;
+    width: 42.3611111111%;
   }
 
   .header__navbar {
@@ -337,6 +450,10 @@ body.locked {
             animation: fade 0.1s linear;
   }
 
+  .burger__menu.active ~ .header__buttons {
+    display: block;
+  }
+
   .burger__btn {
     z-index: 2;
     display: block;
@@ -399,11 +516,20 @@ body.locked {
   .container {
     max-width: 970px;
   }
+
+  .bg img {
+    margin-left: 64.5833333333%;
+    width: 35.4166666667%;
+  }
 }
 
 @media (max-width: 767.98px) {
   .container {
     max-width: 750px;
+  }
+
+  .bg {
+    display: none;
   }
 
   .header__navbar {
@@ -414,11 +540,24 @@ body.locked {
   .header__buttons {
     width: 100%;
   }
+
+  .hero__body {
+    max-width: none;
+    text-align: center;
+  }
+
+  .hero__buttons {
+    padding: 0 10%;
+  }
 }
 
 @media (max-width: 479.98px) {
   .container {
     max-width: none;
+  }
+
+  h1 {
+    font-size: 30px;
   }
 
   .header__logo {
@@ -448,9 +587,21 @@ body.locked {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
+    display: none;
   }
 
   .header__btn {
+    width: 100%;
+  }
+
+  .hero__buttons {
+    padding: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero__btn {
     width: 100%;
   }
 }

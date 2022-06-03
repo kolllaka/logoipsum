@@ -4,28 +4,63 @@
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 $containerSidePadding+px;
-
+	
 	@media (max-width:$breakpoint1300) {
 		max-width: 1200px;
 	}
-
+	
 	@media (max-width:$breakpoint992) {
 		max-width: 970px;
 	}
-
+	
 	@media (max-width:$breakpoint768) {
 		max-width: 750px;
 	}
-
+	
 	@media (max-width:$breakpoint480) {
 		max-width: none;
+	}
+}
+
+// Body
+body {
+	font-family: $fontMain;
+	font-style: normal;
+	position: relative;
+	&.locked{
+		overflow: hidden;
+	}
+}
+.bg {
+	z-index: -1;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	position: absolute;
+	img{
+		margin-left: calc(630/1440*100%);
+		width: calc(810/1440*100%);
+		height: 100%;
+		object-fit: cover;
+		object-position: left bottom;
+		@media (max-width:$breakpoint1300) {
+			margin-left: calc(830/1440*100%);
+			width: calc(610/1440*100%);
+		}
+		@media (max-width:$breakpoint992) {
+			margin-left: calc(930/1440*100%);
+			width: calc(510/1440*100%);
+		}
+	}
+	@media (max-width:$breakpoint768) {
+		display: none;
 	}
 }
 
 .logo {
 }
 .btn {
-	padding: 15px 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,10 +69,10 @@
 	font-size: 18px;
 	line-height: calc(22 / 18 * 100%);
 	text-transform: uppercase;
+	white-space: nowrap;
 	// .btn__secondary
 	&__secondary {
 		color: $primary;
-		background-color: $white;
 	}
 	// .btn__main
 	&__main {
@@ -46,14 +81,6 @@
 	}
 }
 
-// Body
-body {
-	font-family: $fontMain;
-	font-style: normal;
-	&.locked{
-		overflow: hidden;
-	}
-}
 
 // Animations
 // Fade
