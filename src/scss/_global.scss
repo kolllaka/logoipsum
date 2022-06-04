@@ -75,6 +75,9 @@ body {
 	white-space: nowrap;
 	color: $white;
 	background-color: $orange;
+	&:hover{
+		opacity: 0.8;
+	}
 	// .btn__secondary
 	&__secondary {
 		color: $primary;
