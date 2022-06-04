@@ -125,4 +125,67 @@ function update(select, index) {
 };
 
 
+// Swiper
+// BildSlider
+let sliders = document.querySelectorAll('._swiper');
+if (sliders) {
+	for (let index = 0; index < sliders.length; index++) {
+		let slider = sliders[index];
+		if (!slider.classList.contains('swiper-bild')) {
+			let slider_items = slider.children;
+			if (slider_items) {
+				for (let index = 0; index < slider_items.length; index++) {
+					let el = slider_items[index];
+					el.classList.add('swiper-slide');
+				}
+			}
+			let slider_content = slider.innerHTML;
+			let slider_wrapper = document.createElement('div');
+			slider_wrapper.classList.add('swiper-wrapper');
+			slider_wrapper.innerHTML = slider_content;
+			slider.innerHTML = '';
+			slider.appendChild(slider_wrapper);
+			slider.classList.add('swiper-bild');
+		}
+	}
+}
 
+
+
+let sliderBody = document.querySelector('.slider__body');
+let itemSlider = new Swiper(sliderBody, {
+	observer: true,
+	observeParents: true,
+	slidesPerView: 3,
+	spaceBetween: 30,
+	autoHeight: true,
+	speed: 800,
+	loop: true,
+	// Dotts
+	pagination: {
+	},
+	// Arrows
+	navigation: {
+		nextEl: '.ourteam__navigation-next',
+		prevEl: '.ourteam__navigation-prev',
+	},
+	breakpoints: {
+		300: {
+			slidesPerView: 1,
+			spaceBetween: 0
+		},
+		700: {
+			slidesPerView: 1,
+			spaceBetween: 0
+		},
+		1000: {
+			slidesPerView: 2,
+			spaceBetween: 30
+		},
+		1600: {
+			slidesPerView: 3,
+			spaceBetween: 30
+		}
+		
+	}
+});
