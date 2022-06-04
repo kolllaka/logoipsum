@@ -4,7 +4,7 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	@media (max-width:$breakpoint480) {
+	@media (max-width:$breakpoint768) {
 		min-height: 100%;
 	}
 	// .section__bg
@@ -15,7 +15,18 @@
 		left: 40%;
 		width: 60%;
 		height: 100vh;
-		@media (max-width:$breakpoint480) {
+		@media (max-width:$breakpoint768) {
+			display: none;
+		}
+	}
+	.security{
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 60%;
+		width: 40%;
+		height: 100vh;
+		@media (max-width:$breakpoint768) {
 			display: none;
 		}
 	}
@@ -26,12 +37,8 @@
 	// .section__body
 	&__body {
 		max-width: 50%;
-		padding-right: 40px;
+		padding: 0 20px;
 		@media (max-width:$breakpoint768) {
-			max-width: 60%;
-			padding-right: 20px;
-		}
-		@media (max-width:$breakpoint480) {
 			max-width: none;
 			text-align: center;
 			padding: 20px 0;
@@ -43,6 +50,19 @@
 	}
 	// .section__text
 	&__text {
+		&:not(:last-child){
+			margin-bottom: 15px;
+		}
+	}
+	// .section__buttons
+	&__buttons {
+		display: flex;
+		@media (max-width:$breakpoint768) {
+			justify-content: center;
+		}
+	}
+	// .section__btn
+	&__btn {
 	}
 }
 

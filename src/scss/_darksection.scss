@@ -12,6 +12,9 @@
 	}
 	// .darksection__content
 	&__content {
+		&-center{
+			text-align: center;
+		}
 	}
 	// .darksection__title
 	&__title {
@@ -23,8 +26,14 @@
 		font-size: 48px;
 		line-height: calc(59 / 48 * 100%);
 		text-transform: capitalize;
-		text-align: center;
 		color: #FFFFFF;
+		@media (max-width:$breakpoint768) {
+			font-size: 35px;
+			text-align: center;
+		}
+		@media (max-width:$breakpoint480) {
+			font-size: 30px;
+		}
 	}
 	// .darksection__text
 	&__text {
@@ -40,28 +49,53 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: calc(20 / 16 * 100%);
-		text-align: center;
 		color: #FFFFFF;
+		@media (max-width:$breakpoint768) {
+			text-align: center;
+		}
 	}
 	// .darksection__items
 	&__items {
 		display: grid;
-		gap: 74px;
-		grid-template-columns: 1fr 1fr 1fr;
-		@media (max-width:$breakpoint1300) {
-			gap: 40px;
+		&.whatwedo{
+			gap: 74px;
+			grid-template-columns: 1fr 1fr 1fr;
+			@media (max-width:$breakpoint1300) {
+				gap: 40px;
+			}
+			@media (max-width:$breakpoint992) {
+				grid-template-columns: 1fr 1fr;
+				gap: 40px 74px;
+			}
+			@media (max-width:$breakpoint768) {
+				grid-template-columns: 1fr;
+				gap: 40px 0px;
+			}
+			@media (max-width:$breakpoint480) {
+				grid-template-columns: 1fr;
+				gap: 20px 0px;
+			}
 		}
-		@media (max-width:$breakpoint992) {
-			grid-template-columns: 1fr 1fr;
-			gap: 40px 74px;
-		}
-		@media (max-width:$breakpoint768) {
-			grid-template-columns: 1fr;
-			gap: 40px 0px;
-		}
-		@media (max-width:$breakpoint480) {
-			grid-template-columns: 1fr;
-			gap: 20px 0px;
+		&.benefits{
+			gap: 30px;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			@media (max-width:$breakpoint1300) {
+				grid-template-columns: 1fr 1fr;
+				gap: 30px 74px;
+			}
+			@media (max-width:$breakpoint992) {
+				grid-template-columns: 1fr 1fr;
+				gap: 30px 40px;
+			}
+			@media (max-width:$breakpoint768) {
+				grid-template-columns: .8fr;
+				gap: 30px 0px;
+				justify-content: center;
+			}
+			@media (max-width:$breakpoint480) {
+				grid-template-columns: 1fr;
+				gap: 20px 0px;
+			}
 		}
 	}
 	// .darksection__item
@@ -72,8 +106,16 @@
 	background: $white;
 	border-top: 6px solid $orange;
 	padding: 32px 35px 35px;
+	text-align: left;
 	@media (max-width:$breakpoint1300) {
 		padding: 22px 25px 25px;
+	}
+	@media (max-width:$breakpoint768) {
+		text-align: center;
+	}
+	// .whatwedoitem__icon
+	&__icon {
+		margin-bottom: 35px;
 	}
 	// .whatwedoitem__title
 	&__title {

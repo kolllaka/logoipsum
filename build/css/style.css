@@ -110,6 +110,7 @@ body.locked {
 }
 
 .btn {
+  padding: 15px 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,10 +125,13 @@ body.locked {
   line-height: 122.2222222222%;
   text-transform: uppercase;
   white-space: nowrap;
+  color: #FFFFFF;
+  background-color: #FF6200;
 }
 
 .btn__secondary {
   color: #03283C;
+  background-color: transparent;
 }
 
 .btn__main {
@@ -331,17 +335,36 @@ a:active {
   height: 100vh;
 }
 
+.section .security {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 40%;
+  height: 100vh;
+}
+
 .section__content {
   margin: auto 0;
 }
 
 .section__body {
   max-width: 50%;
-  padding-right: 40px;
+  padding: 0 20px;
 }
 
 .section__title {
   margin-bottom: 15px;
+}
+
+.section__text:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.section__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .darksection {
@@ -350,12 +373,15 @@ a:active {
   background: #03283C;
 }
 
+.darksection__content-center {
+  text-align: center;
+}
+
 .darksection__title {
   font-weight: 700;
   font-size: 48px;
   line-height: 122.9166666667%;
   text-transform: capitalize;
-  text-align: center;
   color: #FFFFFF;
 }
 
@@ -367,7 +393,6 @@ a:active {
   font-weight: 300;
   font-size: 16px;
   line-height: 125%;
-  text-align: center;
   color: #FFFFFF;
 }
 
@@ -377,14 +402,27 @@ a:active {
 
 .darksection__items {
   display: grid;
+}
+
+.darksection__items.whatwedo {
   gap: 74px;
   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.darksection__items.benefits {
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .whatwedoitem {
   background: #FFFFFF;
   border-top: 6px solid #FF6200;
   padding: 32px 35px 35px;
+  text-align: left;
+}
+
+.whatwedoitem__icon {
+  margin-bottom: 35px;
 }
 
 .whatwedoitem__title {
@@ -868,8 +906,13 @@ a:active {
     bottom: calc(50% - 1px);
   }
 
-  .darksection__items {
+  .darksection__items.whatwedo {
     gap: 40px;
+  }
+
+  .darksection__items.benefits {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 74px;
   }
 
   .whatwedoitem {
@@ -914,9 +957,14 @@ a:active {
     width: 35.4166666667%;
   }
 
-  .darksection__items {
+  .darksection__items.whatwedo {
     grid-template-columns: 1fr 1fr;
     gap: 40px 74px;
+  }
+
+  .darksection__items.benefits {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 40px;
   }
 
   .offers__items {
@@ -946,9 +994,28 @@ a:active {
     width: 100%;
   }
 
+  .section {
+    min-height: 100%;
+  }
+
+  .section__bg {
+    display: none;
+  }
+
+  .section .security {
+    display: none;
+  }
+
   .section__body {
-    max-width: 60%;
-    padding-right: 20px;
+    max-width: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .section__buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .darksection {
@@ -956,13 +1023,34 @@ a:active {
     padding-bottom: 50px;
   }
 
+  .darksection__title {
+    font-size: 35px;
+    text-align: center;
+  }
+
   .darksection__text:not(:last-child) {
     margin-bottom: 30px;
   }
 
-  .darksection__items {
+  .darksection__text {
+    text-align: center;
+  }
+
+  .darksection__items.whatwedo {
     grid-template-columns: 1fr;
     gap: 40px 0px;
+  }
+
+  .darksection__items.benefits {
+    grid-template-columns: 0.8fr;
+    gap: 30px 0px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .whatwedoitem {
+    text-align: center;
   }
 
   .hero__body {
@@ -1040,30 +1128,25 @@ a:active {
     width: 100%;
   }
 
-  .section {
-    min-height: 100%;
-  }
-
-  .section__bg {
-    display: none;
-  }
-
-  .section__body {
-    max-width: none;
-    text-align: center;
-    padding: 20px 0;
-  }
-
   .darksection {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+
+  .darksection__title {
+    font-size: 30px;
   }
 
   .darksection__text:not(:last-child) {
     margin-bottom: 20px;
   }
 
-  .darksection__items {
+  .darksection__items.whatwedo {
+    grid-template-columns: 1fr;
+    gap: 20px 0px;
+  }
+
+  .darksection__items.benefits {
     grid-template-columns: 1fr;
     gap: 20px 0px;
   }
