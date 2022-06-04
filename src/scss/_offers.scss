@@ -9,16 +9,12 @@
 	}
 	// .offers__body
 	&__body {
+
 	}
 	// .offers__title
 	&__title {
-		margin-bottom: 15px;
 		text-align: center;
-	}
-	// .offers__text
-	&__text {
 		margin-bottom: 50px;
-		text-align: center;
 		@media (max-width:$breakpoint768) {
 			margin-bottom: 30px;
 		}

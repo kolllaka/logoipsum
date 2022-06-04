@@ -1,4 +1,9 @@
 .header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 50;
 	padding: 22px 0;
 	height: 104px;
 	// .header__navbar
