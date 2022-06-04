@@ -69,6 +69,12 @@
 		text-align: center;
 		letter-spacing: 0.2px;
 		color: $white;
+		@media (max-width:$breakpoint992) {
+			max-width: 60%;
+		}
+		@media (max-width:$breakpoint480) {
+			max-width: 100%;
+		}
 	}
 }
 .formfooter {
@@ -77,6 +83,10 @@
 	align-items: center;
 	gap: 16px;
 	height: 100%;
+	@media (max-width:$breakpoint480) {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
 	// .formfooter__input
 	&__input {
 		padding: 16.5px 20px;
@@ -91,9 +101,22 @@
 		&::placeholder{
 			color: $gray;
 		}
+		@media (max-width:$breakpoint992) {
+			max-width: 100%;
+		}
+		@media (max-width:$breakpoint768) {
+			max-width: 60%;
+		}
+		@media (max-width:$breakpoint480) {
+			max-width: 100%;
+		}
 	}
 	// .formfooter__btn
 	&__btn {
+		@media (max-width:$breakpoint480) {
+			max-width: 100%;
+			flex: 1 1 100%;
+		}
 	}
 }
 
@@ -101,18 +124,32 @@
 	padding-top: 70px;
 	padding-bottom: 70px;
 	background-color: $primary;
-
-	color: $white;
+	@media (max-width:$breakpoint768) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	@media (max-width:$breakpoint480) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 	// .bottomfooter__content
 	&__content{
 		display: flex;
 		flex-direction: column;
 		gap: 35px;
+		@media (max-width:$breakpoint480) {
+			gap: 20px;
+		}
 	}
 	// .bottomfooter__row
 	&__row {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width:$breakpoint768) {
+			flex-wrap: wrap-reverse;
+			justify-content: center;
+			gap: 20px;
+		}
 	}
 	// .bottomfooter__line
 	&__line {
@@ -125,7 +162,7 @@
 		display: flex;
 		gap: 10px;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
 		white-space: nowrap;
 
 		font-weight: 500;
@@ -140,11 +177,20 @@
 			flex: 0 0 20px;
 			height: 100%;
 		}
+		@media (max-width:$breakpoint768) {
+			width: 100%;
+		}
 	}
 	// .bottomfooter__links
 	&__links {
 		display: flex;
 		gap: 34px;
+		@media (max-width:$breakpoint768) {
+			gap: 74px;
+		}
+		@media (max-width:$breakpoint480) {
+			gap: 54px;
+		}
 	}
 	// .bottomfooter__link
 	&__link {
@@ -158,6 +204,9 @@
 	display: flex;
 	align-items: start;
 	gap: 85px;
+	@media (max-width:$breakpoint480) {
+		gap: 20px;
+	}
 	// .footernav__items
 	&__items {
 		display: flex;
